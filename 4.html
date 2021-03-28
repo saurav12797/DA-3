@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .slides
+        {
+            width: 50%;
+            height: 50%;
+        }
+    </style>
+</head>
+
+
+
+<body>
+    <section>
+        <img class="slides" src="img/2.1.jpg" >
+        <img class="slides" src="img/2.1.jpg" >
+        <img class="slides" src="img/2.3.jpg" >
+        <img class="slides" src="img/2.4.jpg" >
+    </section>
+</body>
+
+    <script>
+  var index = 0;
+    change();
+
+    function change() {
+        var x = document.getElementsByClassName('slides');
+        for(var i = 0; i < x.length; i++) { 
+            x[i].style.display = "none"; 
+        }
+        index++;
+        if(index > x.length) { 
+            index = 1; 
+        }
+        x[index - 1].style.display = "block";
+        setTimeout(change, 1000);
+    }
+  
+
+setInterval(
+function () {
+  var randomColor = Math.floor(Math.random()*16777215).toString(16);
+  document.body.style.backgroundColor = "#"+randomColor;
+},1000);
+    </script>
+
+
+  
+
+
+</html>

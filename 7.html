@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume generator</title>
+
+    <style>
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;1,100;1,300&display=swap');
+     body
+     {
+         background: url(img/7.jpg);
+         background-size: cover;
+         height: 100vh;
+         width: 100%;
+         background-repeat: no-repeat;
+         color: white;
+         font-family: 'Roboto', sans-serif;
+         font-size: 15px;
+         text-align: center;
+     }
+     
+     #perso
+     {
+         text-align: center;
+     }
+
+     input
+     {
+         margin: 10px;
+         padding: 8px;
+     }
+
+     button
+     {
+         background-color: #F21651;
+         color:white;
+         padding: 15px;
+         font-weight: bold;
+         border: none;
+     }
+
+
+
+
+    </style>
+
+
+</head>
+<body>
+    
+
+
+      <h1 align="center">Resume Generator</h1>
+      <div class="personalInfo" id="perso">
+      
+       <label><b>NAME : </b></label><br>
+       <input type="text" class="p_input" id="fi_name" placeholder="first name" required><br>
+      
+       <label><b>FATHER NAME: </b></label><br>
+       <input type="text" class="p_input" id="f_name" placeholder="last name" required><br>
+       <label><b>EMAIL :  </b></label><br>
+       <input type="email" class="p_input" id="email" placeholder="last name" required><br>
+       <label><b>ADDRESS :  </b></label><br>
+       <input type="text" class="p_input" id="address" placeholder="Address" required><br>
+       
+       <label><b>PHONE:  </b></label><br>
+       <input type="text" class="p_input" id="phone" placeholder="Phone Number" required><br><BR>
+       <label><b>OBJECTIVE:  </b></label><br><BR>
+       <textarea rows="4" cols="50"  class="p_input" id="object" placeholder="Write Objective" required></textarea><BR>
+   
+       
+       
+</div>
+
+
+<h2>EXPERIENCE</h2> 
+<textarea rows="4" cols="50" id="expert" placeholder="Write Experience"></textarea>
+
+<h2>TECHNICAL SKILL</h2> 
+<textarea rows="4" cols="50" id="skill" placeholder="Write your skills"></textarea><br><br>
+
+<button class="pdf_button" onclick="getPDF()">Create Resume PDF</button><br><br>
+      </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"> </script>
+<script>
+    function getPDF()
+    {
+    var doc=new jsPDF();
+    
+    doc.setFontType("bold");
+    doc.setFontSize('30');
+    doc.text(20,20,document.getElementById("fi_name").value+" "+document.getElementById("l_name")) ;
+    doc.setFontSize('16');
+    doc.setFontType("bold");
+    doc.text(20,50,"father name :"+document.getElementById("f_name").value);
+    doc.setFontSize('16');
+    doc.text(20,70,"Email :"+document.getElementById("email").value);
+    doc.text(20,90,"Address :"+document.getElementById("address").value);
+     doc.text(20,110,"Phone :"+document.getElementById("phone").value);
+     doc.setFontSize(16);
+     doc.setFontType("bold");
+     doc.text(20,130,"objective");   
+     doc.setFontSize(14);
+     doc.text(20,140,document.getElementById("object").value);
+     doc.text(20,160,"Experience"); 
+     doc.setFontSize(14);
+     doc.text(20,170,document.getElementById("expert").value);
+     doc.text(20,190,"Technical Skill"); 
+     doc.setFontSize(14);
+     doc.text(20,200,document.getElementById("skill").value);
+     
+    
+  
+    doc.save("text.pdf");
+
+    }
+
+</script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Simple JavaScript Quiz </title>
+	 <style>
+		 body{
+	background: url('img/10.jpg');
+	height: 200%;
+	width: 100%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	color: #fff;
+	font-family: 'Arial', sans-serif;
+	font-size: 14px;
+}
+
+#container{
+	width:60%;
+	
+	margin: 20px auto;
+	overflow: auto;
+	padding: 25px;
+}
+
+header{
+	text-align: center;
+	border-bottom: #fff dashed 1px;
+}
+
+header h1{
+	margin: 0;
+	padding: 0;
+}
+
+header p{
+	padding: 0;
+	margin-top: 5px;
+	color :#000;
+}
+
+section {
+	min-height: 400px;
+}
+
+footer{
+	text-align: center;
+}
+
+input[type='submit']{
+	background: #f06226;
+	border: 0;
+	color: #fff;
+	padding: 10px 15px;
+	cursor: pointer;
+}
+
+#results h3{
+	background: #f06226;
+	padding: 10px; 
+	margin: 10px 0;
+}
+
+#results span{
+	color: #000;
+	font-weight: bold;
+}
+
+	 </style>
+
+
+	</head>
+	<body>
+		<div id="container">
+			<header>
+				<h1>  JavaScript Quiz</h1>
+				
+			</header>
+			<section>
+				<div id="results"> </div>
+
+				<form name="quizForm" onsubmit="return submitAnswers()">
+
+				<h3>1.When was IPL started?</h3>
+				<input type="radio" name="q1" value="a" id="q1a">a. 2008<br>
+				<input type="radio" name="q1" value="b" id="q1b">b. 2007<br>
+				<input type="radio" name="q1" value="c" id="q1c">c. 2009<br>
+				<input type="radio" name="q1" value="d" id="q1d">d. 2011<br>
+
+				<h3>2. Which player has taken most numbers of wickets in IPL so far?</h3>
+				<input type="radio" name="q2" value="a" id="q2a">a. Lasith Malinga<br>
+				<input type="radio" name="q2" value="b" id="q2b">b. Zaheer Khan<br>
+				<input type="radio" name="q2" value="c" id="q2c">c. Munaf Patel<br>
+				<input type="radio" name="q2" value="d" id="q2d">d.  Rashid Khan<br>
+
+				<h3>3. Maximum how many foreign players can play in the playing eleven of the IPL match?</h3>
+				<input type="radio" name="q3" value="a" id="q3a">a. 6<br>
+				<input type="radio" name="q3" value="b" id="q3b">b. 5<br>
+				<input type="radio" name="q3" value="c" id="q3c">c. 3<br>
+				<input type="radio" name="q3" value="d" id="q3d">d. 4<br>
+
+
+				<h3> Has Chennai Super King  won highest numbers of IPL matches so far?</h3>
+				<input type="radio" name="q4" value="a" id="q4a">a. True<br>
+				<input type="radio" name="q4" value="b" id="q4b">b. False<br>
+			
+
+				<h3>5. Which player has taken most numbers of hat-tricks in the IPL so far?</h3>
+				<input type="radio" name="q5" value="a" id="q5a">a. Shane Watson<br>
+				<input type="radio" name="q5" value="b" id="q5b">b. Rabada<br>
+				<input type="radio" name="q5" value="c" id="q5c">c. Lasith Malinga<br>
+				<input type="radio" name="q5" value="d" id="q5d">d. Amit Mishra<br>
+				<br>
+				<br>
+
+				<input type="submit" value="Submit Answers"> <br><br>
+
+				</form>
+			</section>
+			
+
+		</div>
+
+		<script>
+			function submitAnswers() {
+
+var total = 5;
+var score = 0;
+
+// get user input
+
+var q1 = document.forms["quizForm"]["q1"].value;
+var q2 = document.forms["quizForm"]["q2"].value;
+var q3 = document.forms["quizForm"]["q3"].value;
+var q4 = document.forms["quizForm"]["q4"].value;
+var q5 = document.forms["quizForm"]["q5"].value;
+
+// validation - did the submitter skip any Q's? 
+
+for (var i = 1; i <= total; i++) {
+	if(eval("q" + i) == null || eval("q" + i) == "") {
+		alert("You missed question " + i);
+		return false;
+	}
+}
+
+// set correct answers
+
+var answers = ['b', 'a', 'd', 'b', 'd'];	
+
+// check answers (note i - 1 to account for array starting with [0])
+
+for (var i = 1; i <= total; i++) {
+	if (eval("q" + i) == answers[i - 1]) {
+		score++;
+	}
+}
+
+// display results
+
+var results = document.getElementById("results");
+results.innerHTML ='<h3>You Scored <span> '+score+' </span> out of <span>'+total+'</span> </h3>';
+alert('You Scored '+score+' out of '+total); 
+
+// because we are not actually submitting this form
+return false;
+}
+
+		</script>
+	</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+    *
+    {
+        margin: 0;
+        padding: 0;
+    }
+    button
+    {
+        position: absolute;
+        top: 80%;
+        left: 45%;
+        padding: 15px;
+        border: none;
+        background-color:black;
+        color: white;
+        font-size: 20px;
+    }
+
+   .imgpro
+    {
+        
+        background-repeat: no-repeat;
+        height: 100vh;
+        width: 100%;
+        background-size: cover;
+        display: none;
+       
+    }
+
+    .text
+    {
+        position:absolute;
+       top: 40%;
+       left: 35%;
+        color: white;
+        text-align: center;
+        
+    }
+    
+</style>
+
+
+
+
+
+
+</head>
+<body>  
+    
+    <img  class="imgpro" src="img/2.jpg"  >
+   
+        <h1 id="morning" class="text"></h1>
+     <img id="image1" class="imgpro" src="img/2.1.jpg" >
+    </div>
+    <div>
+        <h1 id="afternoon" class="text"></h1>
+     <img id="image2" class="imgpro" src="img/2.2.jpg" >
+    </div>
+    <div>
+        <h1 id="evening" class="text"></h1>
+     <img id="image3" class="imgpro" src="img/2.3.jpg" >
+    </div>
+    <div>
+        <h1 id="night" class="text"></h1>
+     <img id="image4" class="imgpro" src="img/2.4.jpg" >
+    </div>
+    <div>
+
+
+
+<button onclick="findmydate()">Click To Know Time</button>
+
+
+
+
+
+
+
+
+<script>  
+ function findmydate()
+ {
+    var d = new Date();
+var time = d.getHours();
+
+
+
+ if (time < 4)
+
+  {
+document.getElementById("image4").style.display="block";
+document.getElementById("night").innerHTML="ITS NIGHT SAURAV.. GOOD NIGHT";
+
+}
+ else if ( time <12  ) 
+ {
+document.getElementById("image1").style.display="block";
+document.getElementById("morning").innerHTML="GOOD MORNING !!! SAURAV";
+
+}
+else if (time < 16 ) 
+{
+document.getElementById("image2").style.display="block";
+document.getElementById("afternoon").innerHTML="GOOD AFTERNOON !! SAURAV";
+
+}
+ else if (time <9)
+ 
+  {
+document.getElementById("image3").style.display="block";
+document.getElementById("evening").innerHTML="GOOD EVENING !! SAURAV";
+
+} 
+else
+{
+    document.getElementById("image3").style.display="block";
+document.getElementById("evening").innerHTML="GOOD EVENING !! SAURAV";
+}
+
+
+  
+}
+    </script>  
+  </body>  
+</html>

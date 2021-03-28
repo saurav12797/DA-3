@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DA3</title>
+    
+
+
+    <style>
+
+      body
+      {
+        background: url('img/1.jpg') rgba(0,0,0,.1);
+        background-repeat: no-repeat;
+        height: 100vh;
+        width: 100%;
+        background-size: cover;
+        color: white;
+        
+      }
+      h1
+      {
+        text-align: center;
+        margin-top: 200px;
+        font-size: 60px;
+      }
+      button
+      {
+        position: absolute;
+         left: 43%;
+         top: 50%;
+         padding: 10px;
+         background-color: brown;
+         color: white;
+         border-radius: 10px;
+         border: 1px solid white;
+      }
+    </style>
+    
+</head>
+<body>
+
+  
+  
+  
+    
+    <button onclick="myNumber()"> CLICK HERE TO GENERATE RANDOM NUMBER </button>
+    <BR><BR>
+    <h1 id="display"></h1>
+    
+    <script>
+    function myNumber() 
+    {
+      var mynum = prompt("Please enter number between 1 & 5", "");
+      
+    
+      switch(mynum)
+      {
+          case "1": 
+        document.getElementById("display").innerHTML="ONE";
+        break;
+          
+        
+          case "2": 
+          document.getElementById("display").innerHTML="TWO";
+        break;
+          
+          case "3": 
+          document.getElementById("display").innerHTML="THREE";
+        break;
+          
+          case "4": 
+          document.getElementById("display").innerHTML="FOUR";
+        break;
+          
+          case "5": 
+          document.getElementById("display").innerHTML="FIVE";
+        break;
+          
+          default: 
+          document.getElementById("display").innerHTML="SORRY !! PLEASE ENTER BETWEEN 1 & 5";
+        break;
+          
+
+      }
+        
+      }
+    
+    </script>
+    
+    </body>
+
+</html>

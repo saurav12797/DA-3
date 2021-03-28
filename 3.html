@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div  class="main_div">
+        <div class="box">
+            <h1>REGISTRATION LINK</h1>
+        <form class="myform"  onsubmit ="return validateForm()">
+            <label> FIRST NAME</label>
+           <input class="myinput" type="text" name="fname" id="fname" placeholder="Enter Your First Name" required><BR>
+           <label> LAST NAME</label>
+           <input class="myinput" type="text" name="lname" id="lname" placeholder="Enter Your Last Name"required><BR>
+           <label> PASSWORD</label>
+            <input class="myinput" type="password" name="password1" id="password1" placeholder="Enter Your Password"required><BR>
+             
+                <label> CONFIRM</label>
+                <input class="myinput" type="password" name="password2" id="password2" placeholder=" ReEnter Password"required><BR>
+               
+                    <span id = "message" style="color:red"> </span>
+          
+              <input style="margin-left: 180px;" type="submit" value="Submit">
+
+
+
+
+        </form>
+    <script>
+      function validateForm() {  
+ 
+    var pw1 = document.getElementById("password1").value;  
+    var pw2 = document.getElementById("password2").value;  
+  
+    
+    
+    if(pw1 != pw2) {  
+      document.getElementById("message").innerHTML = "**Passwords are not same";  
+      return false;  
+    } else {  
+      alert ("Your password created successfully");  
+      document.write("JavaScript form has been submitted successfully");  
+    }  
+ }   
+            
+    </script>
+</body>
+</html>

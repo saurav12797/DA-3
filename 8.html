@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap" rel="stylesheet">
+
+    <style>
+        
+        *
+        {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #081925;
+        }
+       
+        .image
+        {
+            
+            height: 50%;
+            width: 70%;
+            background-repeat: no-repeat;
+           
+           
+        }
+    .text
+    {
+        position: absolute;
+        top: 80%;
+        left: 35%;
+        color: white;
+        text-align: center;
+        
+    }
+    p{
+        position: absolute;
+        left: 78%;
+        top: 30%;
+        color: white;
+        font-size: 30px;
+        justify-content: center;
+    }
+
+    </style>
+</head>
+<body>
+    <div  >
+         <img  class="image" src="img/2.4.jpg" onmouseover="showtext()" onmouseout="goodbye()"  id="img1" onClick="imgName()">
+    </div> 
+    <p id="desc"></p>
+    <div class="text">
+    <h1>Hover Over the Image For Description</h1>
+    <h1>Double Click for Image Name</h1>
+</div>
+</body>
+
+<script>
+  function showtext()
+  {
+      document.getElementById('desc').innerHTML="Upon this Lunar New Year, amid the wintry air, beneath the noble starry-black, we observe the beauty of the moon. She graces Earth's sky to glow equally for all, a picture in light as if created by love.";
+
+
+  }
+
+  function goodbye()
+  {
+      document.getElementById('desc').innerHTML="goodbye";
+  }
+  function imgName() {
+   var path= document.getElementById("img1").src;
+   var filename = path.replace(/^.*[\\\/]/, '');
+   alert("Your Image name is "+ filename);
+
+  }
+</script>
+</html>
